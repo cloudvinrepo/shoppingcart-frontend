@@ -24,8 +24,9 @@ const Uniblox = ({ addToCart }) => {
   const [items, setItems] = useState([]);
   const [open, setOpen] = useState(false);
 
+  const host = "13.233.88.51";
   useEffect(() => {
-    fetch("http://localhost:5000/products", {
+    fetch(`http://${host}:5000/products`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
