@@ -22,7 +22,7 @@ jobs:
 
   deploy:
     needs: docker-build
-    runs-on: [aws-ec2-for-shoppingcart-fe]
+    runs-on: [ubuntu-latest]
     steps:
       - name: pull image from docker hub
         run: echo "pulling image from docker hub"
