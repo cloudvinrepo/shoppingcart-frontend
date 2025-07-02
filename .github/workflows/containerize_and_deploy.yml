@@ -1,0 +1,9 @@
+name: Containerize the react application and deploy it onto EC2 
+
+on:
+  publish:
+    branches: [main]
+
+jobs:
+  - name: This is a dummy step
+    run: echo "Testing"
