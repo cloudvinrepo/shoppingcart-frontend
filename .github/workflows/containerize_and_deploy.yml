@@ -12,10 +12,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Login to docker hub
-        run: docker login -u ${{ secrets.DOCKER_User}} -p ${{secrets.DOCKER_PASSWORD}}
+        run: docker login -u ${{ secrets.DOCKER_User}} -p ${{secrets.DOCKER_PASSWORD}} docker.io
 
       - name: Build docker image
-        run: docker build -t shoppingcart/frontend .
+        run: docker build -t billumi/shoppingcart-frontend .
 
       - name: Publish image to docker hub
-        run: docker push shoppingcart/frontend:latest
+        run: docker push billumi/shoppingcart-frontend:latest
