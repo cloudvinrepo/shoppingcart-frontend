@@ -5,5 +5,5 @@ on:
     branches: [main]
 
 jobs:
-  - name: This is a dummy step
+  - name: "This is a dummy step"
     run: echo "Testing"
