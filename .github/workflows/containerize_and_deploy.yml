@@ -1,7 +1,7 @@
 name: Containerize the react application and deploy it onto EC2 
 
 on:
-  publish:
+  push:
     branches: [main]
 
 jobs:
