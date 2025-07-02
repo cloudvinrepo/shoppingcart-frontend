@@ -25,6 +25,7 @@ const Uniblox = ({ addToCart }) => {
   const [open, setOpen] = useState(false);
 
   const host = "13.233.88.51";
+  // const host = "localhost";
   useEffect(() => {
     fetch(`http://${host}:5000/products`, {
       method: "GET",
