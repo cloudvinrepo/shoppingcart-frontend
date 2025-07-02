@@ -24,14 +24,14 @@ const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: "#1A2027",
   }),
 }));
-
+const host = "13.233.88.51";
 // This is the Cart page where all the items added will be displayed
 const Cart = () => {
   const [cart, setCart] = useState([]);
   const [open, setOpen] = useState(false);
   const [coupon, setCoupon] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/items", {
+    fetch(`http://${host}:5000/items`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const Cart = () => {
   }, []);
   const generateCoupon = async () => {
     try {
-      const response = await fetch("http://localhost:5000/coupons", {
+      const response = await fetch(`http://${host}:5000/coupons`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -68,7 +68,7 @@ const Cart = () => {
     console.log(coupon);
     try {
       const response = await fetch(
-        "http://localhost:5000/apply_coupon/" + coupon,
+        `http://${host}:5000/apply_coupon/` + coupon,
         {
           method: "POST",
           headers: {
@@ -91,7 +91,7 @@ const Cart = () => {
   };
   const place_order = async () => {
     try {
-      const response = await fetch("http://localhost:5000/orders", {
+      const response = await fetch(`http://${host}:5000/orders`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
