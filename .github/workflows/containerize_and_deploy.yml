@@ -22,8 +22,13 @@ jobs:
 
   deploy:
     needs: docker-build
-    runs-on: [ubuntu-latest]
+    runs-on: [aws-ec2-for-shoppingcart-fe]
     steps:
       - name: pull image from docker hub
-        run: echo "pulling image from docker hub"
-       
+        run: docker pull billumi/shoppingcart-frontend:latest
+
+      - name: Delete old containers
+        run: docker rm -f shoppingcart-frontend-container
+
+      - name: Run docker container
+        run: docker run -d --name shoppingcart-frontend-container -p 4000:4000 -e PORT=4000  billumi/shoppingcart-frontend:latest
