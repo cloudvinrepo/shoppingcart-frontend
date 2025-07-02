@@ -5,5 +5,8 @@ on:
     branches: [main]
 
 jobs:
-  - name: "This is a dummy step"
-    run: echo "Testing"
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "This is a dummy step"
+        run: echo "Testing"
