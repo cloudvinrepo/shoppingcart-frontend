@@ -1,4 +1,4 @@
-name: Containerize the react application and deploy it onto EC2 
+name: Containerize the react application and deploy it onto EC2
 
 on:
   push:
@@ -8,5 +8,14 @@ jobs:
   docker-build:
     runs-on: ubuntu-latest
     steps:
-      - name: "This is a dummy step"
-        run: echo "Testing"
+      - name: Checkout Source..
+        uses: actions/checkout@v4
+
+      - name: Login to docker hub
+        uses: docker login -u ${{ secrets.DOCKER_User}} -p ${{secrets.DOCKER_PASSWORD}}
+
+      - name: Build docker image
+        run: docker build -t shoppingcart/frontend .
+
+      - name: Publish image to docker hub
+        run: docker push shoppingcart/frontend:latest
