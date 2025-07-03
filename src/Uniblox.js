@@ -60,7 +60,7 @@ const Uniblox = ({ addToCart }) => {
   const [getItem, setGetItem] = useState([]);
   const addItems = async (item) => {
     try {
-      const response = await fetch("http://localhost:5000/items", {
+      const response = await fetch(`http://${host}:5000/items`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Set content type to JSON
