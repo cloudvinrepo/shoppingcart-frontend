@@ -24,7 +24,7 @@ const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: "#1A2027",
   }),
 }));
-const host = "65.0.101.122";
+const host = "13.232.97.148";
 // This is the Cart page where all the items added will be displayed
 const Cart = () => {
   const [cart, setCart] = useState([]);
